@@ -1,0 +1,1191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Study Material Hub | Damodar Academy Nangloi</title>
+
+  <meta
+    name="description"
+    content="Explore study resources, syllabus, sample papers, previous-year questions and academic resources for students at Damodar Academy, Nangloi, Delhi."
+  >
+
+  <meta name="theme-color" content="#102b50">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .resource-hero {
+      padding: 65px 0;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(231,184,75,.16), transparent 30%),
+        linear-gradient(135deg, #091d37, #102b50);
+      color: #fff;
+      text-align: center;
+    }
+
+    .resource-hero h1 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .resource-hero h1 span {
+      color: #e7b84b;
+    }
+
+    .resource-hero p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      color: rgba(255,255,255,.8);
+    }
+
+    .resource-search {
+      max-width: 650px;
+      margin: 28px auto 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .resource-search input {
+      flex: 1;
+      min-width: 0;
+      padding: 15px 17px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 10px;
+      outline: none;
+      background: #fff;
+      color: #243247;
+    }
+
+    .resource-search button {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      background: #e7b84b;
+      color: #091d37;
+      font-weight: 700;
+    }
+
+    .resource-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .resource-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      padding: 9px 15px;
+      border: 1px solid #d8e0ea;
+      border-radius: 50px;
+      background: #fff;
+      color: #102b50;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #102b50;
+      color: #fff;
+      border-color: #102b50;
+    }
+
+    .resource-count {
+      font-size: .9rem;
+      color: #68768a;
+    }
+
+    .resource-card {
+      min-width: 0;
+    }
+
+    .resource-card[hidden] {
+      display: none !important;
+    }
+
+    .resource-card .card-icon {
+      font-size: 1.35rem;
+    }
+
+    .resource-card .resource-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: auto;
+      padding: 10px 14px;
+      background: #102b50;
+      color: #fff;
+      border-radius: 8px;
+      font-size: .88rem;
+    }
+
+    .resource-card .resource-link:hover {
+      background: #1c4678;
+    }
+
+    .resource-card .resource-label {
+      margin-bottom: 10px;
+    }
+
+    .resource-note {
+      margin-top: 30px;
+      padding: 20px;
+      border-left: 4px solid #e7b84b;
+      border-radius: 8px;
+      background: #fff8e8;
+    }
+
+    .resource-note p {
+      font-size: .92rem;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 35px 15px;
+      text-align: center;
+      color: #68768a;
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .quick-link {
+      padding: 22px;
+      background: #fff;
+      border: 1px solid #e3e8ef;
+      border-radius: 13px;
+      transition: .3s ease;
+    }
+
+    .quick-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(16,43,80,.08);
+      border-color: #e7b84b;
+    }
+
+    .quick-link strong {
+      display: block;
+      color: #102b50;
+      margin-bottom: 5px;
+    }
+
+    .quick-link span {
+      color: #68768a;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 768px) {
+      .resource-search {
+        flex-direction: column;
+      }
+
+      .resource-search button {
+        min-height: 46px;
+      }
+
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+    }
+
+/* ==========================================
+   DAMODAR ACADEMY — RESOURCE HUB STYLING
+   Add this section at the END of style.css
+========================================== */
+
+.resource-hero {
+  position: relative;
+  padding: 65px 20px;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #071b3a, #123d70);
+  color: #ffffff;
+}
+
+.resource-hero::before,
+.resource-hero::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.resource-hero::before {
+  top: -110px;
+  left: -60px;
+}
+
+.resource-hero::after {
+  bottom: -150px;
+  right: -40px;
+}
+
+.resource-hero h1 {
+  position: relative;
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.resource-hero h1 span {
+  color: #f4c542;
+}
+
+.resource-hero p {
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+  color: #e2eaf6;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.resource-hero .hero-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 15px;
+  border: 1px solid rgba(244, 197, 66, 0.5);
+  border-radius: 30px;
+  background: rgba(244, 197, 66, 0.1);
+  color: #ffda73;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.resource-section {
+  padding: 50px 0;
+  background: #f5f7fb;
+}
+
+.resource-section .section-heading {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.resource-section .section-heading h2 {
+  margin-bottom: 10px;
+  color: #102747;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.resource-section .section-heading p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* Search and filters */
+
+.resource-toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.5fr) repeat(3, minmax(130px, 1fr));
+  gap: 14px;
+  margin: 28px 0;
+  padding: 20px;
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(16, 39, 71, 0.06);
+}
+
+.resource-search,
+.resource-toolbar select {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #dce3ed;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+  color: #172b4d;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.resource-search:focus,
+.resource-toolbar select:focus {
+  border-color: #174b86;
+  box-shadow: 0 0 0 3px rgba(23, 75, 134, 0.12);
+}
+
+.resource-search::placeholder {
+  color: #94a3b8;
+}
+
+/* Optional quick filter buttons */
+
+.resource-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 30px;
+}
+
+.resource-filter-btn {
+  padding: 10px 17px;
+  border: 1px solid #dce3ed;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #263b59;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resource-filter-btn:hover,
+.resource-filter-btn.active {
+  border-color: #123d70;
+  background: #123d70;
+  color: #ffffff;
+}
+
+/* Resource cards */
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(16, 39, 71, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  border-color: #e7bd42;
+  box-shadow: 0 15px 35px rgba(16, 39, 71, 0.11);
+}
+
+.resource-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 17px;
+}
+
+.resource-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 15px;
+  background: #edf3fb;
+  color: #123d70;
+  font-size: 1.45rem;
+}
+
+.resource-card h3 {
+  margin: 0 0 7px;
+  color: #102747;
+  font-size: 1.12rem;
+  line-height: 1.45;
+}
+
+.resource-card p {
+  margin: 0 0 16px;
+  color: #64748b;
+  font-size: 0.94rem;
+  line-height: 1.75;
+}
+
+.resource-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 18px;
+}
+
+.resource-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #f0f4fa;
+  color: #385273;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.resource-tag.gold {
+  background: #fff6d9;
+  color: #8a6410;
+}
+
+.resource-card .resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 5px;
+}
+
+.resource-actions a,
+.resource-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 43px;
+  padding: 10px 15px;
+  border: 1px solid #123d70;
+  border-radius: 9px;
+  background: #123d70;
+  color: #ffffff;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resource-actions a:hover,
+.resource-actions button:hover {
+  border-color: #e1b536;
+  background: #e1b536;
+  color: #102747;
+}
+
+.resource-actions a.secondary {
+  border-color: #dce3ed;
+  background: #ffffff;
+  color: #123d70;
+}
+
+.resource-actions a.secondary:hover {
+  border-color: #123d70;
+  background: #edf3fb;
+}
+
+/* Result count and empty state */
+
+.resource-results-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0 20px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.resource-results-info strong {
+  color: #102747;
+}
+
+.resource-empty {
+  grid-column: 1 / -1;
+  padding: 45px 20px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.resource-empty h3 {
+  margin: 0 0 10px;
+  color: #102747;
+}
+
+.resource-empty p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* Loading and error messages */
+
+.resource-status {
+  padding: 18px;
+  border-radius: 12px;
+  background: #edf3fb;
+  color: #123d70;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.resource-status.error {
+  background: #fff0f0;
+  color: #a32626;
+}
+
+/* Help / CTA section */
+
+.resource-help {
+  margin-top: 45px;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #102747, #174b86);
+  color: #ffffff;
+  text-align: center;
+}
+
+.resource-help h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+.resource-help p {
+  max-width: 650px;
+  margin: 0 auto 22px;
+  color: #e2eaf6;
+  line-height: 1.8;
+}
+
+.resource-help a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 21px;
+  border-radius: 10px;
+  background: #f4c542;
+  color: #102747;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.resource-help a:hover {
+  transform: translateY(-2px);
+  background: #ffda73;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .resource-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resource-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 620px) {
+  .resource-hero {
+    padding: 48px 18px;
+  }
+
+  .resource-section {
+    padding: 35px 0;
+  }
+
+  .resource-toolbar {
+    grid-template-columns: 1fr;
+    gap: 11px;
+    padding: 14px;
+    margin: 22px 0;
+  }
+
+  .resource-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .resource-card {
+    padding: 19px;
+    border-radius: 15px;
+  }
+
+  .resource-card:hover {
+    transform: none;
+  }
+
+  .resource-card .resource-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resource-actions a,
+  .resource-actions button {
+    padding: 10px;
+    font-size: 0.84rem;
+  }
+
+  .resource-help {
+    padding: 24px 18px;
+    margin-top: 30px;
+  }
+
+  .resource-results-info {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resource-card,
+  .resource-actions a,
+  .resource-actions button,
+  .resource-filter-btn {
+    transition: none;
+  }
+
+  .resource-card:hover,
+  .resource-help a:hover {
+    transform: none;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container navbar">
+
+      <a class="brand" href="index.html" aria-label="Damodar Academy home">
+        <span class="brand-logo">DA</span>
+
+        <span class="brand-text">
+          <strong>Damodar Academy</strong>
+          <span>Nangloi, Delhi</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >☰</button>
+
+      <nav class="nav-links" id="main-navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="resources.html" class="active" aria-current="page">Resources</a>
+        <a href="contact.html">Contact</a>
+        <a href="form.html" class="nav-cta">Enquire Now</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="resource-hero">
+      <div class="container">
+
+        <span class="eyebrow">STUDENT LEARNING CENTRE</span>
+
+        <h1>
+          Study Material <span>Hub</span>
+        </h1>
+
+        <p>
+          Your learning starts here. Explore academic resources, syllabus,
+          sample papers and useful study links in one place.
+        </p>
+
+        <a href="#resource-library" class="btn btn-primary">
+          Explore Resources
+        </a>
+
+        <form class="resource-search" id="resource-search-form" role="search">
+          <input
+            type="search"
+            id="resource-search-input"
+            placeholder="Search resources, class or subject..."
+            aria-label="Search study resources"
+          >
+
+          <button type="submit">Search Resources</button>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section>
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">QUICK ACCESS</span>
+          <h2>Find What You Need</h2>
+          <p>
+            Start with these useful academic categories.
+          </p>
+        </div>
+
+        <div class="quick-links">
+
+          <a class="quick-link" href="#resource-library" data-quick-filter="syllabus">
+            <strong>Syllabus & Curriculum</strong>
+            <span>Find subject-wise curriculum information.</span>
+          </a>
+
+          <a class="quick-link" href="#resource-library" data-quick-filter="papers">
+            <strong>Sample Papers & PYQs</strong>
+            <span>Practise with question papers and examples.</span>
+          </a>
+
+          <a class="quick-link" href="#resource-library" data-quick-filter="official">
+            <strong>Official Education Portals</strong>
+            <span>Visit official education resource websites.</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCE LIBRARY -->
+    <section class="section-light" id="resource-library">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">RESOURCE LIBRARY</span>
+          <h2>Explore Learning Resources</h2>
+          <p>
+            Select a category or search for the material you need.
+            Always check the class, subject and academic session.
+          </p>
+        </div>
+
+        <div class="resource-toolbar">
+
+          <div class="resource-filters" aria-label="Filter resources">
+            <button class="filter-btn active" type="button" data-filter="all">
+              All Resources
+            </button>
+
+            <button class="filter-btn" type="button" data-filter="syllabus">
+              Syllabus
+            </button>
+
+            <button class="filter-btn" type="button" data-filter="papers">
+              Question Papers
+            </button>
+
+            <button class="filter-btn" type="button" data-filter="official">
+              Official Portals
+            </button>
+
+            <button class="filter-btn" type="button" data-filter="books">
+              Books & Learning
+            </button>
+          </div>
+
+          <p class="resource-count" id="resource-count" aria-live="polite">
+            Showing all resources
+          </p>
+
+        </div>
+
+        <div class="resource-grid" id="resource-grid">
+
+          <!-- RESOURCE 1 -->
+          <article
+            class="resource-card"
+            data-category="official syllabus"
+            data-search="edudel delhi education department official school circular notices syllabus"
+          >
+            <span class="resource-label">Official Portal</span>
+            <div class="card-icon" aria-hidden="true">ED</div>
+
+            <h3>Delhi Education Department</h3>
+
+            <p>
+              Visit the official Delhi Directorate of Education website
+              for circulars, academic updates and education resources.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://www.edudel.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Edudel ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 2 -->
+          <article
+            class="resource-card"
+            data-category="official books"
+            data-search="ncert textbooks e books class 9 10 11 12 official"
+          >
+            <span class="resource-label">Official Books</span>
+            <div class="card-icon" aria-hidden="true">NC</div>
+
+            <h3>NCERT Textbooks</h3>
+
+            <p>
+              Find official NCERT textbook resources for school subjects
+              and different classes.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://ncert.nic.in/textbook.php"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Textbooks ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 3 -->
+          <article
+            class="resource-card"
+            data-category="official papers syllabus"
+            data-search="cbse academic curriculum syllabus sample question papers class 10 12"
+          >
+            <span class="resource-label">CBSE</span>
+            <div class="card-icon" aria-hidden="true">CB</div>
+
+            <h3>CBSE Academic</h3>
+
+            <p>
+              Check curriculum information and official academic
+              resources published by CBSE.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://cbseacademic.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit CBSE Academic ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 4 -->
+          <article
+            class="resource-card"
+            data-category="papers official"
+            data-search="cbse previous year question papers class 10 class 12 board examinations"
+          >
+            <span class="resource-label">Practice</span>
+            <div class="card-icon" aria-hidden="true">PYQ</div>
+
+            <h3>Previous-Year Question Papers</h3>
+
+            <p>
+              Use the official CBSE website to locate previous-year
+              examination question papers.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://www.cbse.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Find Question Papers ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 5 -->
+          <article
+            class="resource-card"
+            data-category="papers official"
+            data-search="cbse sample question papers marking schemes official class 10 12"
+          >
+            <span class="resource-label">Exam Preparation</span>
+            <div class="card-icon" aria-hidden="true">SQP</div>
+
+            <h3>Sample Papers & Marking Schemes</h3>
+
+            <p>
+              Visit CBSE Academic to find sample papers and marking schemes
+              where officially published for your class and session.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://cbseacademic.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Browse Sample Papers ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 6 -->
+          <article
+            class="resource-card"
+            data-category="syllabus official"
+            data-search="delhi government schools syllabus support material academic study resources"
+          >
+            <span class="resource-label">School Resources</span>
+            <div class="card-icon" aria-hidden="true">SM</div>
+
+            <h3>DOE Syllabus & Support Material</h3>
+
+            <p>
+              Look for the latest available syllabus and support material
+              on the Delhi Education Department portal.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://www.edudel.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open DOE Portal ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 7 -->
+          <article
+            class="resource-card"
+            data-category="books official"
+            data-search="diksha digital learning resources textbook lessons students"
+          >
+            <span class="resource-label">Digital Learning</span>
+            <div class="card-icon" aria-hidden="true">DL</div>
+
+            <h3>DIKSHA Learning Platform</h3>
+
+            <p>
+              Explore digital learning content, lessons and educational
+              resources available through DIKSHA.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://diksha.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore DIKSHA ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 8 -->
+          <article
+            class="resource-card"
+            data-category="books"
+            data-search="class 11 physics chemistry mathematics computer science physical education English learning"
+          >
+            <span class="resource-label">Subject Learning</span>
+            <div class="card-icon" aria-hidden="true">SL</div>
+
+            <h3>Subject-Wise Study Resources</h3>
+
+            <p>
+              Organise resources by class and subject, including Physics,
+              Chemistry, Mathematics, Computer Science and English.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://ncert.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Browse NCERT Resources ↗
+            </a>
+          </article>
+
+          <!-- RESOURCE 9 -->
+          <article
+            class="resource-card"
+            data-category="papers"
+            data-search="self assessment revision practice worksheets mock tests exam preparation"
+          >
+            <span class="resource-label">Self Practice</span>
+            <div class="card-icon" aria-hidden="true">PR</div>
+
+            <h3>Revision & Practice</h3>
+
+            <p>
+              Use your class notes, prescribed textbooks and available
+              practice papers to revise topics and assess your preparation.
+            </p>
+
+            <a
+              class="resource-link"
+              href="https://cbseacademic.nic.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Academic Resources ↗
+            </a>
+          </article>
+
+          <p class="empty-state" id="empty-state" hidden>
+            No matching resources found. Try a different keyword or category.
+          </p>
+
+        </div>
+
+        <div class="resource-note">
+          <h3>Important Information</h3>
+          <p>
+            External websites are managed by their respective organisations.
+            Links may lead to a portal homepage rather than a specific
+            document. Check the academic year and class before downloading
+            any material. Damodar Academy should verify each resource
+            before presenting it as current or officially prescribed.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HELP CTA -->
+    <section>
+      <div class="container">
+
+        <div class="cta-banner">
+          <div>
+            <h2>Need Help Finding Study Material?</h2>
+            <p>
+              Contact Damodar Academy for information about classes,
+              subjects and available learning resources.
+            </p>
+          </div>
+
+          <a
+            class="btn btn-whatsapp"
+            href="https://wa.me/919312208052?text=Hello%20Damodar%20Academy%2C%20I%20need%20help%20finding%20study%20material."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Enquire on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-logo">DA</span>
+            <strong>Damodar Academy</strong>
+          </div>
+
+          <p>
+            Supporting students through learning resources,
+            academic guidance and tuition information in Nangloi, Delhi.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="form.html">Enquiry Form</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Study Resources</h3>
+          <ul>
+            <li><a href="https://www.edudel.nic.in/" target="_blank" rel="noopener noreferrer">DOE Delhi</a></li>
+            <li><a href="https://ncert.nic.in/" target="_blank" rel="noopener noreferrer">NCERT</a></li>
+            <li><a href="https://cbseacademic.nic.in/" target="_blank" rel="noopener noreferrer">CBSE Academic</a></li>
+            <li><a href="https://diksha.gov.in/" target="_blank" rel="noopener noreferrer">DIKSHA</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul>
+            <li>Nangloi, Delhi – 110041</li>
+            <li><a href="tel:+919312208052">93122 08052</a></li>
+            <li><a href="contact.html">Contact Page</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span data-current-year>2026</span> Damodar Academy.
+          All rights reserved.
+        </p>
+
+        <p>
+          Website by
+          <a href="index.html">Shankar Singh Rajput</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/919312208052?text=Hello%20Damodar%20Academy"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Damodar Academy on WhatsApp"
+  >W</a>
+
+  <script src="script.js" defer></script>
+
+  <!-- Resource-specific search and filtering -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchForm = document.getElementById("resource-search-form");
+      const searchInput = document.getElementById("resource-search-input");
+      const cards = [...document.querySelectorAll(".resource-card")];
+      const filterButtons = [...document.querySelectorAll("[data-filter]")];
+      const count = document.getElementById("resource-count");
+      const emptyState = document.getElementById("empty-state");
+
+      let activeFilter = "all";
+
+      function updateResources() {
+        const que
