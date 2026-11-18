@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request Access | Admin Portal</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="apply.css">
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+    <div class="background-overlay"></div>
+
+    <main class="apply-wrapper">
+
+        <section class="apply-card">
+
+            <!-- Brand -->
+            <div class="brand">
+                <div class="brand-logo">A</div>
+                <h2>YOUR BRAND</h2>
+            </div>
+
+            <!-- Heading -->
+            <div class="apply-heading">
+
+                <div class="top-label">
+                    <span>●</span>
+                    ADMIN ACCESS REQUEST
+                </div>
+
+                <h1>Request an Invitation.</h1>
+
+                <p>
+                    Apply for administrative access to our platform.
+                    Every application is reviewed by our Super Admin
+                    before an invitation is issued.
+                </p>
+
+            </div>
+
+            <!-- Process -->
+            <div class="application-steps">
+
+                <div class="step">
+                    <strong>01. Apply</strong>
+                    <span>Submit details</span>
+                </div>
+
+                <div class="step">
+                    <strong>02. Review</strong>
+                    <span>Admin approval</span>
+                </div>
+
+                <div class="step">
+                    <strong>03. Activate</strong>
+                    <span>Get invitation</span>
+                </div>
+
+            </div>
+
+            <form id="applicationForm">
+
+                <div class="section-title">
+                    Personal Information
+                </div>
+
+                <div class="field">
+                    <label for="fullName">Full Name *</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        maxlength="100"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="name@example.com"
+                        maxlength="254"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="mobile">Mobile Number *</label>
+                    <input
+                        type="tel"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Enter mobile number"
+                        maxlength="15"
+                        autocomplete="tel"
+                        required
+                    >
+                </div>
+
+                <div class="section-title">
+                    Access Information
+                </div>
+
+                <div class="field">
+                    <label for="role">Requested Access Type *</label>
+
+                    <select id="role" name="role" required>
+                        <option value="">Choose requested access</option>
+                        <option value="content_manager">Content Manager</option>
+                        <option value="editor">Editor</option>
+                        <option value="administrator">Administrator</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="reason">Why do you need access? *</label>
+
+                    <textarea
+                        id="reason"
+                        name="reason"
+                        placeholder="Describe your purpose and responsibilities..."
+                        maxlength="1000"
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Consent -->
+                <label class="consent">
+                    <input
+                        type="checkbox"
+                        id="applicationConsent"
+                        required
+                    >
+
+                    <span>
+                        I confirm that the information is accurate
+                        and agree to the
+                        <a href="terms.html">Terms & Conditions</a>
+                        and
+                        <a href="privacy.html">Privacy Policy</a>.
+                    </span>
+                </label>
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="applyButton"
+                >
+                    Submit Application →
+                </button>
+
+                <p
+                    id="applicationMessage"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+            <!-- Review Information -->
+            <div class="review-info">
+
+                <div class="info-icon">🛡️</div>
+
+                <p>
+                    <strong>Secure Approval Process</strong><br>
+                    Your application will be stored securely
+                    and reviewed by the Super Admin.
+                    Only approved applicants can receive an
+                    activation code.
+                </p>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="bottom-links">
+
+                Already invited?
+                <a href="signup.html">Activate your account</a>
+
+                <br>
+
+                <a href="../index.html">← Back to Login</a>
+
+                <br><br>
+
+                <span>© 2026 YOUR BRAND. All rights reserved.</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Assets -->
+    <script src="../assets.js"></script>
+
+</body>
+</html>

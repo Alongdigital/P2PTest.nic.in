@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Activate Account | Admin Portal</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+    <div class="background-overlay"></div>
+
+    <main class="signup-wrapper">
+
+        <section class="signup-card">
+
+            <!-- Brand -->
+            <div class="brand">
+                <div class="brand-logo">A</div>
+                <h2>YOUR BRAND</h2>
+            </div>
+
+            <!-- Heading -->
+            <div class="signup-heading">
+
+                <span class="security-label">
+                    INVITATION REQUIRED
+                </span>
+
+                <h1>Activate Your Account</h1>
+
+                <p>
+                    Welcome! Enter your activation code to
+                    unlock your secure admin registration.
+                </p>
+
+            </div>
+
+            <!-- Activation -->
+            <div class="section-label">
+                STEP 01 — INVITATION VERIFICATION
+            </div>
+
+            <div class="activation-box">
+
+                <p>
+                    Enter the unique activation code received
+                    after your application has been approved.
+                </p>
+
+                <div class="activation-row">
+
+                    <input
+                        type="text"
+                        id="activationCode"
+                        placeholder="Enter activation code"
+                        maxlength="100"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        class="verify-btn"
+                        id="verifyCodeBtn">
+                        Verify
+                    </button>
+
+                </div>
+
+                <p
+                    id="activationMessage"
+                    class="status-message"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </div>
+
+            <!-- Registration -->
+            <form id="signupForm">
+
+                <div class="section-label">
+                    STEP 02 — ACCOUNT INFORMATION
+                </div>
+
+                <p class="locked-message" id="lockedMessage">
+                    🔒 Verify your activation code to unlock these fields.
+                </p>
+
+                <div class="field">
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                        maxlength="100"
+                        disabled
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="email">Registered Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your registered email"
+                        autocomplete="email"
+                        maxlength="254"
+                        disabled
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="mobile">Mobile Number</label>
+                    <input
+                        type="tel"
+                        id="mobile"
+                        placeholder="Enter your mobile number"
+                        autocomplete="tel"
+                        maxlength="15"
+                        disabled
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="password">Create Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a strong password"
+                        autocomplete="new-password"
+                        minlength="12"
+                        disabled
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                        minlength="12"
+                        disabled
+                        required
+                    >
+                </div>
+
+                <!-- Terms -->
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="signupTerms"
+                        disabled
+                        required
+                    >
+
+                    <span>
+                        I agree to the
+                        <a href="terms.html">Terms & Conditions</a>
+                        and
+                        <a href="privacy.html">Privacy Policy</a>.
+                    </span>
+
+                </label>
+
+                <!-- Register -->
+                <button
+                    type="submit"
+                    id="registerBtn"
+                    class="register-btn"
+                    disabled>
+                    Create Admin Account
+                </button>
+
+                <p
+                    id="signupMessage"
+                    class="status-message"
+                    role="status"
+                    aria-live="polite">
+                </p>
+
+            </form>
+
+            <!-- Footer -->
+            <div class="bottom-links">
+
+                Already have an account?
+                <a href="../index.html">Sign In</a>
+
+                <br>
+
+                Not invited yet?
+                <a href="apply.html">Apply for Access</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Shared Assets -->
+    <script src="../assets.js"></script>
+
+    <!-- Signup Logic will be added in script.js -->
+    <script src="../script.js"></script>
+
+</body>
+</html>

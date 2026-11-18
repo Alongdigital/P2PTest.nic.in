@@ -1,0 +1,201 @@
+signup-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 35px 16px;
+        }
+
+        .signup-card {
+            width: 100%;
+            max-width: 530px;
+            padding: 36px;
+            border-radius: 24px;
+            background: rgba(10,20,38,.80);
+            border: 1px solid rgba(255,255,255,.18);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 25px 80px rgba(0,0,0,.4);
+        }
+
+
+        .signup-heading {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .signup-heading h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .signup-heading p {
+            color: #bdc9dc;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .security-label {
+            display: inline-block;
+            padding: 8px 13px;
+            background: rgba(37,99,235,.15);
+            border: 1px solid rgba(96,165,250,.25);
+            border-radius: 30px;
+            color: #93c5fd;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .section-label {
+            color: #93c5fd;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 25px 0 15px;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 9px;
+            color: #e2e8f0;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.17);
+            background: rgba(255,255,255,.07);
+            color: white;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .field input::placeholder {
+            color: #91a0b5;
+        }
+
+        .field input:focus {
+            border-color: #60a5fa;
+        }
+
+        .field input:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+        }
+
+        .activation-box {
+            padding: 20px;
+            border: 1px solid rgba(96,165,250,.25);
+            background: rgba(37,99,235,.09);
+            border-radius: 14px;
+        }
+
+        .activation-box p {
+            font-size: 11px;
+            color: #bdc9dc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .activation-row {
+            display: flex;
+            gap: 9px;
+        }
+
+        .activation-row input {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .verify-btn {
+            padding: 0 17px;
+            border: none;
+            border-radius: 9px;
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(120deg,#2563eb,#4f46e5);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .register-btn:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+        }
+
+        .terms {
+            display: flex;
+            gap: 9px;
+            align-items: flex-start;
+            color: #cbd5e1;
+            font-size: 11px;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+
+        .terms input {
+            margin-top: 3px;
+            accent-color: #2563eb;
+        }
+
+        .terms a,
+        .bottom-links a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        .status-message {
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .locked-message {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .bottom-links {
+            text-align: center;
+            color: #bdc9dc;
+            font-size: 12px;
+            margin-top: 25px;
+            line-height: 2.2;
+        }
+
+        @media(max-width:480px) {
+            .signup-card {
+                padding: 25px 19px;
+            }
+
+            .activation-row {
+                flex-direction: column;
+            }
+
+            .verify-btn {
+                padding: 13px;
+            }
+
+            .signup-heading h1 {
+                font-size: 24px;
+            }
+        }
